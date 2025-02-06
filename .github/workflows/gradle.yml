@@ -25,10 +25,11 @@ jobs:
         uses: skjolber/maven-cache-github-action@v1
         with:
           step: restore
-          
+      - name: CD
+        run: cd GeyserExtension
       # Build
-      - name: Build with Maven
-        run: mvn package
+      - name: Build with Gradle
+        run: gradle build
         
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1
